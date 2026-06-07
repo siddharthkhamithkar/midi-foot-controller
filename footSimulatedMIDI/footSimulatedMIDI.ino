@@ -31,7 +31,7 @@ void printMenu() {
 void pressFootSwitch(int switchNumber) {
   fs[switchNumber] = 1;
 
-  String footSwitchPressedMessage = "Footswitch pressed: " + String(fs[switchNumber + 1]);
+  String footSwitchPressedMessage = "Footswitch pressed: " + String(switchNumber + 1);
   Serial.println(footSwitchPressedMessage);
 
   fs[switchNumber] = 0;

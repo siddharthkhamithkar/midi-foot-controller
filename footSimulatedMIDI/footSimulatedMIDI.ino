@@ -2,6 +2,8 @@
 
 This is an arduino program to simulate footswitch presses and trigger specific MIDI controls across your DAW.
 
+I will probably revamp this entire thing once I am done with the hardware part of this project, because I'm using an Uno R3 and I will probably have to flash the entire thing.
+
 Written by yours truly, Siddharth Khamithkar
 
 */

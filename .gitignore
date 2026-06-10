@@ -1,7 +1,7 @@
 .venv
 build
-Middleware/menubar.png
-Middleware/MyIcons.icns
+middleware/menubar.png
+middleware/MyIcons.icns
 dist
 *.egg-info
 __pycache__

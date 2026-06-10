@@ -10,7 +10,7 @@ from serial.tools import list_ports
 
 
 def resource_path(relative_path):
-
+    # Resolve path for bundled resources (PyInstaller)
     try:
         base_path = sys._MEIPASS
     except AttributeError:
@@ -26,7 +26,7 @@ def note_name(note):
         "F#", "G", "G#", "A", "A#", "B"
     ]
 
-    # MainStage / Logic numbering
+    # Convert MIDI note number to readable name
     octave = (note // 12) - 2
 
     return f"{names[note % 12]}{octave}"
@@ -36,6 +36,7 @@ class MidiBridgeApp(rumps.App):
 
     def __init__(self):
 
+        # Initialize menubar app with icon
         super().__init__(
             "",
             icon=resource_path("menubar.png")
@@ -81,6 +82,7 @@ class MidiBridgeApp(rumps.App):
 
     def find_arduino(self):
 
+        # Look for Arduino by common HWID/manufacturer/device hints
         for port in list_ports.comports():
 
             if (
@@ -94,6 +96,7 @@ class MidiBridgeApp(rumps.App):
 
     def find_iac(self):
 
+        # Find macOS IAC driver by name
         for name in mido.get_output_names():
 
             if "IAC" in name:
@@ -186,6 +189,7 @@ class MidiBridgeApp(rumps.App):
                 "value": midi_port
             })
 
+            # Open serial and MIDI output
             ser = serial.Serial(
                 serial_port,
                 31250,
@@ -216,6 +220,7 @@ class MidiBridgeApp(rumps.App):
 
                     channel = status & 0x0F
 
+                    # Build and forward a MIDI note_on message
                     msg = mido.Message(
                         "note_on",
                         channel=channel,

@@ -123,7 +123,7 @@ void loop() {
     // Switch held: detect long press
     if (currentState == LOW && !holdTriggered[i]) {
 
-      if (millis() - pressStartTime[i] >= 200) {
+      if (millis() - pressStartTime[i] >= 200) { //this is 200ms right now because i can't seem to hold down the switch for a full second without it triggering multiple times
 
         sendLongPress(i); // send long-press note
         holdTriggered[i] = true;

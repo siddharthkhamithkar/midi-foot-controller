@@ -1,0 +1,8 @@
+.venv
+build
+Middleware/menubar.png
+Middleware/MyIcons.icns
+dist
+*.egg-info
+__pycache__
+.DS_Store

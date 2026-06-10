@@ -50,5 +50,3 @@ Or build a standalone macOS app with PyInstaller using `Arduino Midi Bridge.spec
 Compatibility and notes
 - Tested on macOS (IAC Driver). The bridge expects the Arduino on a USB serial port and the IAC bus for forwarding messages.
 - Adjust serial and MIDI settings for other platforms or different Arduino hardware.
-
-Author: Siddharth Khamithkar

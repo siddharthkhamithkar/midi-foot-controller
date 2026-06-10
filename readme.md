@@ -1,4 +1,4 @@
-# MIDI Foot Controller — Arduino + macOS Bridge
+# MIDI Foot Controller - Arduino + macOS Bridge
 
 This repository provides a compact footswitch-to-MIDI solution. An Arduino sketch reads multiple footswitches and sends raw 3-byte MIDI packets over the Arduino's USB serial connection. A small macOS menubar bridge (`middleware.py`) listens on the serial port and forwards decoded messages to the system MIDI bus (IAC Driver), allowing DAWs and other apps to receive the notes.
 
